@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Анастасия Федорова — AI Product Manager / Product Builder</title>
+  <meta name="description" content="Портфолио Product Manager: VitaBot, AI-продукты, discovery, PRD, backlog, разработка, тестирование, unit-экономика и growth." />
+  <style>
+    :root{
+      --bg:#f6f4ee; --paper:#fffdf8; --ink:#17202b; --muted:#5f6b7a;
+      --line:#e3ded3; --accent:#0f3f6e; --accent2:#16615d; --green:#e3f0e9;
+      --sand:#eee5d2; --shadow:0 18px 50px rgba(23,32,43,.10);
+      --radius:26px; --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+    header{position:sticky;top:0;z-index:20;background:rgba(246,244,238,.86);backdrop-filter:blur(18px);border-bottom:1px solid rgba(227,222,211,.7)}
+    .nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:-.02em}
+    .brand-dot{width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2))}
+    .nav-links{display:flex;gap:18px;font-size:14px;color:var(--muted);align-items:center}
+    .nav-links a:hover{color:var(--ink)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:12px 18px;font-weight:700;border:1px solid var(--line);background:var(--paper);box-shadow:0 6px 18px rgba(23,32,43,.06)}
+    .btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+    .hero{padding:78px 0 64px;position:relative;overflow:hidden}
+    .hero:before{content:"";position:absolute;inset:-40% -20% auto auto;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle, rgba(22,97,93,.22), transparent 65%);pointer-events:none}
+    .hero-grid{display:grid;grid-template-columns:1.24fr .76fr;gap:44px;align-items:center}
+    .eyebrow{display:inline-flex;gap:8px;align-items:center;background:#e9efe9;color:#25493f;border:1px solid #d4e0d6;padding:8px 12px;border-radius:999px;font-size:14px;font-weight:700;margin-bottom:20px}
+    h1{font-size:58px;line-height:.98;margin:0 0 22px;letter-spacing:-.06em}
+    .lead{font-size:20px;color:var(--muted);max-width:760px;margin:0 0 30px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0}
+    .hero-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);transform:rotate(1deg)}
+    .portrait{aspect-ratio:1/1;object-fit:cover;width:100%;border-radius:20px;display:block}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:34px}
+    .stat{background:rgba(255,253,248,.78);border:1px solid var(--line);border-radius:20px;padding:18px}
+    .stat b{display:block;font-size:26px;letter-spacing:-.04em;color:var(--accent)}
+    .stat span{display:block;color:var(--muted);font-size:13px;margin-top:4px}
+    section{padding:70px 0;border-top:1px solid rgba(227,222,211,.7)}
+    .section-head{display:flex;justify-content:space-between;gap:28px;align-items:flex-end;margin-bottom:30px}
+    .section-head h2{font-size:40px;letter-spacing:-.05em;line-height:1.05;margin:0;max-width:760px}
+    .section-head p{color:var(--muted);margin:0;max-width:420px}
+    .case-intro{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:24px 0 36px}
+    .box{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:0 8px 24px rgba(23,32,43,.05)}
+    .box h3{font-size:24px;letter-spacing:-.04em;margin:0 0 10px}
+    .box p{color:var(--muted);margin:0}
+    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+    .tag{font-size:13px;border:1px solid #cfd9d5;background:#edf4f0;color:#25493f;border-radius:999px;padding:7px 10px;font-weight:700}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .step{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:22px;position:relative;overflow:hidden}
+    .num{font-weight:900;color:var(--accent);font-size:14px;margin-bottom:12px}
+    .step h3{margin:0 0 8px;font-size:20px;letter-spacing:-.03em}
+    .step p{margin:0;color:var(--muted);font-size:15px}
+    .evidence{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px}
+    .shot{background:var(--paper);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 12px 28px rgba(23,32,43,.07)}
+    .shot img{width:100%;display:block;object-fit:cover;max-height:430px;object-position:top left;background:#fff}
+    .shot.tall img{max-height:620px}
+    .shot.wide{grid-column:1 / -1}
+    .shot.wide img{max-height:520px}
+    .cap{padding:14px 16px;color:var(--muted);font-size:14px;border-top:1px solid var(--line);background:#fffdf8}
+    .dark{background:#193429;color:#f6f4ee;border-top:0}
+    .dark .section-head p,.dark .muted,.dark .cap{color:#cad7d0}
+    .dark .box,.dark .step{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.13);box-shadow:none}
+    .dark .tag{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.18);color:#f6f4ee}
+    .dark .num{color:#9ad3bf}
+    .columns{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    ul.clean{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:10px;color:var(--muted)}
+    ul.clean li{position:relative;padding-left:24px}
+    ul.clean li:before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;border-radius:50%;background:var(--accent2)}
+    .dark ul.clean{color:#cad7d0}
+    .process{counter-reset:item;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .process div{counter-increment:item;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:18px;color:var(--muted)}
+    .process div:before{content:counter(item);display:inline-flex;width:26px;height:26px;align-items:center;justify-content:center;background:var(--accent);color:white;border-radius:50%;font-size:13px;font-weight:800;margin-right:10px}
+    .footer{padding:44px 0;background:#0f1c19;color:#f6f4ee}
+    .footer-grid{display:flex;justify-content:space-between;gap:24px;align-items:center}
+    .footer a{color:#d9f1ea;text-decoration:underline;text-underline-offset:4px}
+    @media (max-width:920px){
+      .hero-grid,.case-intro,.columns,.evidence{grid-template-columns:1fr}.stats,.steps,.process{grid-template-columns:1fr 1fr}.nav-links{display:none}h1{font-size:44px}.section-head{display:block}.section-head h2{font-size:34px}.section-head p{margin-top:12px}.hero-card{transform:none;max-width:420px}.shot.wide{grid-column:auto}
+    }
+    @media (max-width:580px){.wrap{padding:0 16px}.stats,.steps,.process{grid-template-columns:1fr}.hero{padding-top:48px}h1{font-size:36px}.lead{font-size:17px}.section-head h2{font-size:30px}.footer-grid{display:block}.footer-grid .hero-actions{margin-top:18px}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top"><span class="brand-dot"></span><span>Анастасия Федорова</span></a>
+    <nav class="nav-links">
+      <a href="#vitabot">VitaBot</a>
+      <a href="#evidence">Доказательства</a>
+      <a href="#hermes">HermesAI</a>
+      <a href="#lifegame">Life Game</a>
+      <a class="btn" href="https://t.me/anastasia_germes">Telegram</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">AI Product Manager / Product Builder</div>
+        <h1>Запускаю AI- и web-продукты от discovery до MVP, метрик и роста</h1>
+        <p class="lead">Исследую рынок и пользователей, формирую PRD/ТЗ, веду backlog, ставлю задачи разработке, принимаю релиз, проверяю гипотезы спроса и считаю unit-экономику.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#vitabot">Смотреть кейс VitaBot</a>
+          <a class="btn" href="#process">Как я работаю</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><b>2,5 года</b><span>в AI-продуктах и автоматизации</span></div>
+          <div class="stat"><b>50+</b><span>AI-проектов и внедрений</span></div>
+          <div class="stat"><b>600</b><span>заявок за неделю в smoke-test</span></div>
+          <div class="stat"><b>до 66×</b><span>ROAS в партнёрской механике</span></div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img class="portrait" src="assets/portrait.png" alt="Профессиональный портрет Анастасии Федоровой" />
+      </div>
+    </div>
+  </section>
+
+  <section id="vitabot">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>VitaBot — AI/web-продукт для beauty-мастеров</h2>
+        <p>Главный кейс: продукт для той же аудитории, с которой работают YClients/Altegio — мастера, студии и салоны beauty-индустрии.</p>
+      </div>
+      <div class="case-intro">
+        <div class="box">
+          <h3>Что за продукт</h3>
+          <p>VitaBot помогает мастеру вести клиентскую базу, записи, переносы, коммуникации, реактивацию клиентов, рекомендации и допродажи через mini app, CRM-логику и AI-администратора.</p>
+          <div class="tags"><span class="tag">BeautyTech</span><span class="tag">AI-администратор</span><span class="tag">CRM</span><span class="tag">Mini App</span><span class="tag">Retention</span></div>
+        </div>
+        <div class="box">
+          <h3>Моя роль</h3>
+          <p>Отвечала за продуктовый контур: discovery, конкурентный анализ, PRD/ТЗ, пользовательские сценарии, backlog, постановку задач, приёмку, тестирование, unit-экономику и проверку спроса.</p>
+          <div class="tags"><span class="tag">PRD</span><span class="tag">Backlog</span><span class="tag">User Flow</span><span class="tag">Unit economics</span><span class="tag">Growth</span></div>
+        </div>
+      </div>
+      <div class="steps">
+        <article class="step"><div class="num">01 / Discovery</div><h3>Исследовала рынок</h3><p>Сайты, тарифы, MRR/MAU, офферы, ценность, негативные отзывы, статьи, интервью, тайные покупки и созвоны с основателями.</p></article>
+        <article class="step"><div class="num">02 / Product Definition</div><h3>Описала продукт</h3><p>Сформулировала vision, целевую аудиторию, сценарии, CRM-логику, AI-администратора, MVP и функциональные требования.</p></article>
+        <article class="step"><div class="num">03 / Delivery</div><h3>Выстроила разработку</h3><p>Организовала backlog, спринты, процесс постановки задач, передачу разработчику, проверку, тестирование и вывод в релиз.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="evidence" class="dark">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Доказательства продуктового цикла</h2>
+        <p>Скриншоты рабочих артефактов: анализ рынка, PRD, требования, YouGile-процессы, чек-листы тестирования и unit-экономика.</p>
+      </div>
+      <div class="evidence">
+        <figure class="shot wide"><img src="assets/competitor_analysis_1.png" alt="Конкурентный анализ beauty-рынка"/><figcaption class="cap">Конкурентный анализ: боли пользователей, ценность продукта, офферы, монетизация и отзывы.</figcaption></figure>
+        <figure class="shot"><img src="assets/competitor_analysis_2.png" alt="Анализ конкурентов и метрик"/><figcaption class="cap">Фрагмент анализа: тарифы, MAU/MRR, модель монетизации, негативные отзывы и ниша.</figcaption></figure>
+        <figure class="shot"><img src="assets/competitor_analysis_3.png" alt="SEO и комментарии по competitor analysis"/><figcaption class="cap">Выводы по рынку: как конкуренты приходят к результату, какие запросы и каналы используют.</figcaption></figure>
+        <figure class="shot tall"><img src="assets/prd_definition.png" alt="PRD Product Definition VitaBot"/><figcaption class="cap">PRD / Product Definition: название продукта, vision, аудитория, проблема и ключевая идея.</figcaption></figure>
+        <figure class="shot tall"><img src="assets/functional_requirements.png" alt="Функциональные требования VitaBot"/><figcaption class="cap">Функциональные требования: booking-система, расписание, коммуникации, аналитика и AI-логика.</figcaption></figure>
+        <figure class="shot wide"><img src="assets/planning_pipeline.png" alt="Воронка планирования YouGile"/><figcaption class="cap">YouGile: воронка планирования — входящие идеи, backlog, принятие решений, задачи до релиза.</figcaption></figure>
+        <figure class="shot wide"><img src="assets/dev_pipeline_1.png" alt="Процесс разработки в YouGile"/><figcaption class="cap">YouGile: процесс разработки — взято в работу, передано разработчику, получено на проверку, тестирование, релиз.</figcaption></figure>
+        <figure class="shot wide"><img src="assets/testing_checklist.png" alt="Чек-лист тестирования функционала"/><figcaption class="cap">Чек-лист тестирования: сценарии проверки, ожидаемый результат, критичность, статус и необходимость переделки.</figcaption></figure>
+        <figure class="shot tall wide"><img src="assets/unit_economics.png" alt="Калькулятор unit-экономики"/><figcaption class="cap">Калькулятор unit-экономики: ARPU, LTV, CAC, COGS, gross margin, P&L, сценарии роста и обратный расчёт от целевой прибыли.</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap columns">
+      <div class="box">
+        <h3>AI-логика и качество ответов</h3>
+        <p>Отдельно проектировала AI-сценарии, чтобы бот не просто отвечал, а помогал мастеру продавать, удерживать клиентов и не терять записи.</p>
+        <ul class="clean">
+          <li>квалификация клиента и сбор контекста;</li>
+          <li>консультации по услугам, противопоказаниям и записи;</li>
+          <li>реактивация базы и повторные продажи;</li>
+          <li>обработка нестандартных сообщений и edge cases;</li>
+          <li>чек-листы качества AI-коммуникации.</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Проверка спроса и growth</h3>
+        <p>Запускала партнёрско-контентную механику: блогер → AI-бот → заявка → квалификация → продажа.</p>
+        <ul class="clean">
+          <li>первый тест дал около 600 заявок за неделю;</li>
+          <li>после подтверждения спроса развивала бартерные партнёрства;</li>
+          <li>механика показала ROAS до 66×;</li>
+          <li>заявки приходили без прямых затрат на рекламный бюджет;</li>
+          <li>решения принимались по связке сегмент → оффер → канал → метрика.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="hermes">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>HermesAI / Veluna AI — AI-администраторы и AI-квалификаторы</h2>
+        <p>Опыт запуска AI-решений для бизнеса, CRM-процессов, воронок и команды.</p>
+      </div>
+      <div class="columns">
+        <div class="box">
+          <h3>Что запускала</h3>
+          <ul class="clean">
+            <li>no-code AI-администратор для записи и консультаций;</li>
+            <li>AI-квалификатор лидов;</li>
+            <li>лендинги и AI-боты для обработки заявок;</li>
+            <li>связка блогеры → заявки → квалификация → встречи в календаре;</li>
+            <li>интеграции с CRM и процессами продаж.</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h3>Что выстроила</h3>
+          <ul class="clean">
+            <li>Bitrix24 и процесс работы отдела продаж;</li>
+            <li>регламенты, планёрки, отчётность и контроль задач;</li>
+            <li>процесс разработки и передачи задач;</li>
+            <li>обучение и координацию команды;</li>
+            <li>управление командой до 5 человек.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="lifegame" class="dark">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Life Game — pet-product для целей, задач и привычек</h2>
+        <p>Личный продукт для управления фокусом дня, целями, привычками, XP и регулярным прогрессом.</p>
+      </div>
+      <div class="case-intro">
+        <div class="box">
+          <h3>Идея</h3>
+          <p>Превратить личное планирование в операционную систему: фокусные задачи, привычки, уровни, баллы и обратная связь по прогрессу.</p>
+        </div>
+        <div class="box">
+          <h3>Что сделано</h3>
+          <p>Сформулировала боль, спроектировала логику целей и XP, собрала MVP с AI-assisted / vibe coding и тестирую на собственных сценариях.</p>
+          <div class="hero-actions"><a class="btn" href="https://life-game-orpin.vercel.app/">Открыть демо Life Game</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Мой продуктовый процесс</h2>
+        <p>Как прохожу путь от идеи и хаоса до работающего MVP, релиза и бизнес-метрик.</p>
+      </div>
+      <div class="process">
+        <div>Исследую рынок, конкурентов и пользователей.</div>
+        <div>Выделяю боли, сегменты и сценарии.</div>
+        <div>Формирую гипотезы и критерии проверки.</div>
+        <div>Описываю PRD/ТЗ, CJM, user flow и backlog.</div>
+        <div>Собираю MVP или прототип.</div>
+        <div>Передаю задачи в разработку и сопровождаю реализацию.</div>
+        <div>Проверяю результат через тестирование и user feedback.</div>
+        <div>Смотрю unit-экономику, выручку, удержание и бизнес-метрики.</div>
+        <div>Решаю: масштабировать, дорабатывать или закрывать гипотезу.</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-grid">
+    <div>
+      <strong>Анастасия Федорова</strong><br/>
+      AI Product Manager / Product Builder
+    </div>
+    <div class="hero-actions">
+      <a href="https://t.me/anastasia_germes">@anastasia_germes</a>
+      <a href="mailto:ana.dav96@mail.ru">ana.dav96@mail.ru</a>
+      <a href="tel:+79067448000">+7 906 744-80-00</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
