@@ -13,18 +13,40 @@
       --radius:26px; --max:1180px;
     }
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
+    html{scroll-behavior:smooth;scroll-padding-top:92px}
     body{margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
     a{color:inherit;text-decoration:none}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
     header{position:sticky;top:0;z-index:20;background:rgba(246,244,238,.86);backdrop-filter:blur(18px);border-bottom:1px solid rgba(227,222,211,.7)}
-    .nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
     .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:-.02em}
     .brand-dot{width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2))}
-    .nav-links{display:flex;gap:18px;font-size:14px;color:var(--muted);align-items:center}
-    .nav-links a:hover{color:var(--ink)}
-    .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:12px 18px;font-weight:700;border:1px solid var(--line);background:var(--paper);box-shadow:0 6px 18px rgba(23,32,43,.06)}
+    .nav-links{display:flex;gap:8px;font-size:14px;color:var(--muted);align-items:center}
+    .nav-link,.nav-group>summary{display:flex;align-items:center;min-height:44px;padding:0 11px;border-radius:12px;font-weight:700;cursor:pointer;list-style:none}
+    .nav-group>summary::-webkit-details-marker,.mobile-nav>summary::-webkit-details-marker{display:none}
+    .nav-link:hover,.nav-group>summary:hover,.nav-group[open]>summary{background:var(--paper);color:var(--ink)}
+    .nav-group{position:relative}
+    .nav-group>summary:after{content:"";width:7px;height:7px;margin-left:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-2px)}
+    .nav-group[open]>summary:after{transform:rotate(225deg) translate(-1px,-1px)}
+    .dropdown{position:absolute;top:calc(100% + 10px);left:0;width:330px;padding:10px;border:1px solid var(--line);border-radius:18px;background:var(--paper);box-shadow:var(--shadow)}
+    .dropdown a{display:block;padding:12px;border-radius:12px;color:var(--ink)}
+    .dropdown a:hover{background:var(--green)}
+    .dropdown strong,.dropdown span{display:block}
+    .dropdown span{margin-top:3px;color:var(--muted);font-size:12px;line-height:1.4}
+    .mobile-nav{display:none;position:relative}
+    .mobile-nav>summary{display:grid;place-items:center;width:48px;height:48px;border:1px solid var(--line);border-radius:14px;background:var(--paper);cursor:pointer}
+    .menu-icon,.menu-icon:before,.menu-icon:after{display:block;width:21px;height:2px;border-radius:2px;background:var(--ink)}
+    .menu-icon{position:relative}.menu-icon:before,.menu-icon:after{content:"";position:absolute;left:0}.menu-icon:before{top:-7px}.menu-icon:after{top:7px}
+    .mobile-nav[open] .menu-icon{background:transparent}.mobile-nav[open] .menu-icon:before{top:0;transform:rotate(45deg)}.mobile-nav[open] .menu-icon:after{top:0;transform:rotate(-45deg)}
+    .mobile-panel{position:absolute;right:0;top:58px;width:min(360px,calc(100vw - 32px));max-height:calc(100vh - 92px);overflow:auto;padding:16px;border:1px solid var(--line);border-radius:20px;background:var(--paper);box-shadow:var(--shadow)}
+    .mobile-label{margin:8px 10px 5px;color:var(--muted);font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+    .mobile-panel a{display:block;padding:11px 10px;border-radius:11px;font-weight:700;color:var(--ink)}
+    .mobile-panel a:hover{background:var(--green)}
+    .mobile-panel .mobile-contact{margin-top:12px;text-align:center;background:var(--accent);color:#fff}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;border-radius:999px;padding:12px 18px;color:var(--ink);font-size:16px;font-weight:700;border:1px solid var(--line);background:var(--paper);box-shadow:0 6px 18px rgba(23,32,43,.06)}
     .btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+    .btn:hover{background:#f3eee5}.btn.primary:hover{background:#0b345c}
+    a:focus-visible,summary:focus-visible{outline:3px solid #e5a83d;outline-offset:3px}
     .hero{padding:78px 0 64px;position:relative;overflow:hidden}
     .hero:before{content:"";position:absolute;inset:-40% -20% auto auto;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle, rgba(22,97,93,.22), transparent 65%);pointer-events:none}
     .hero-grid{display:grid;grid-template-columns:1.24fr .76fr;gap:44px;align-items:center}
@@ -85,7 +107,7 @@
     .footer-grid{display:flex;justify-content:space-between;gap:24px;align-items:center}
     .footer a{color:#d9f1ea;text-decoration:underline;text-underline-offset:4px}
     @media (max-width:920px){
-      .hero-grid,.case-intro,.columns,.evidence,.featured-case{grid-template-columns:1fr}.stats,.steps,.process{grid-template-columns:1fr 1fr}.nav-links{display:none}h1{font-size:44px}.section-head{display:block}.section-head h2{font-size:34px}.section-head p{margin-top:12px}.hero-card{transform:none;max-width:420px}.shot.wide{grid-column:auto}
+      .hero-grid,.case-intro,.columns,.evidence,.featured-case{grid-template-columns:1fr}.stats,.steps,.process{grid-template-columns:1fr 1fr}.nav-links{display:none}.mobile-nav{display:block}h1{font-size:44px}.section-head{display:block}.section-head h2{font-size:34px}.section-head p{margin-top:12px}.hero-card{transform:none;max-width:420px}.shot.wide{grid-column:auto}
     }
     @media (max-width:580px){.wrap{padding:0 16px}.stats,.steps,.process{grid-template-columns:1fr}.hero{padding-top:48px}h1{font-size:36px}.lead{font-size:17px}.section-head h2{font-size:30px}.footer-grid{display:block}.footer-grid .hero-actions{margin-top:18px}}
   </style>
@@ -94,13 +116,37 @@
 <header>
   <div class="wrap nav">
     <a class="brand" href="#top"><span class="brand-dot"></span><span>Анастасия Федорова</span></a>
-    <nav class="nav-links">
-      <a href="#vitabot">VitaBot</a>
-      <a href="#evidence">Доказательства</a>
-      <a href="#hermes">Veluna AI</a>
-      <a href="#lifegame">Life Game</a>
-      <a class="btn" href="https://t.me/anastasia_germes">Telegram</a>
+    <nav class="nav-links" aria-label="Основная навигация">
+      <details class="nav-group">
+        <summary>Кейсы</summary>
+        <div class="dropdown">
+          <a href="cases/ai-admin/"><strong>ИИ-администратор</strong><span>Аудит 361 диалога → гипотезы → MVP → результат</span></a>
+          <a href="#vitabot"><strong>VitaBot</strong><span>Проектирование продукта от идеи до MVP</span></a>
+        </div>
+      </details>
+      <details class="nav-group">
+        <summary>Продукты</summary>
+        <div class="dropdown">
+          <a href="#hermes"><strong>Veluna AI</strong><span>ИИ-администраторы для клиентских коммуникаций</span></a>
+          <a href="#lifegame"><strong>Life Game</strong><span>Pet-product для целей, задач и привычек</span></a>
+        </div>
+      </details>
+      <a class="nav-link" href="#evidence">Результаты</a>
+      <a class="nav-link" href="#top">Обо мне</a>
+      <a class="btn primary" href="https://t.me/anastasia_germes">Связаться</a>
     </nav>
+    <details class="mobile-nav">
+      <summary aria-label="Открыть меню"><span class="menu-icon" aria-hidden="true"></span></summary>
+      <nav class="mobile-panel" aria-label="Мобильная навигация">
+        <div class="mobile-label">Кейсы</div>
+        <a href="cases/ai-admin/">ИИ-администратор</a><a href="#vitabot">VitaBot</a>
+        <div class="mobile-label">Продукты</div>
+        <a href="#hermes">Veluna AI</a><a href="#lifegame">Life Game</a>
+        <div class="mobile-label">Портфолио</div>
+        <a href="#evidence">Результаты</a><a href="#top">Обо мне</a>
+        <a class="mobile-contact" href="https://t.me/anastasia_germes">Связаться</a>
+      </nav>
+    </details>
   </div>
 </header>
 
