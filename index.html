@@ -74,11 +74,18 @@
     .process{counter-reset:item;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
     .process div{counter-increment:item;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:18px;color:var(--muted)}
     .process div:before{content:counter(item);display:inline-flex;width:26px;height:26px;align-items:center;justify-content:center;background:var(--accent);color:white;border-radius:50%;font-size:13px;font-weight:800;margin-right:10px}
+    .featured-case{margin-top:18px;padding:30px;border-radius:var(--radius);background:linear-gradient(135deg,#153e38,#0f3f6e);color:#fff;box-shadow:var(--shadow);display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center}
+    .featured-case .eyebrow{margin:0 0 14px;background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.2);color:#fff}
+    .featured-case h3{font-size:30px;line-height:1.08;letter-spacing:-.04em;margin:0 0 10px;max-width:760px}
+    .featured-case p{margin:0;color:#dce9e5;max-width:720px}
+    .featured-case .case-metrics{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+    .featured-case .case-metrics span{padding:8px 11px;border:1px solid rgba(255,255,255,.2);border-radius:999px;font-size:13px;font-weight:700}
+    .featured-case .btn{white-space:nowrap}
     .footer{padding:44px 0;background:#0f1c19;color:#f6f4ee}
     .footer-grid{display:flex;justify-content:space-between;gap:24px;align-items:center}
     .footer a{color:#d9f1ea;text-decoration:underline;text-underline-offset:4px}
     @media (max-width:920px){
-      .hero-grid,.case-intro,.columns,.evidence{grid-template-columns:1fr}.stats,.steps,.process{grid-template-columns:1fr 1fr}.nav-links{display:none}h1{font-size:44px}.section-head{display:block}.section-head h2{font-size:34px}.section-head p{margin-top:12px}.hero-card{transform:none;max-width:420px}.shot.wide{grid-column:auto}
+      .hero-grid,.case-intro,.columns,.evidence,.featured-case{grid-template-columns:1fr}.stats,.steps,.process{grid-template-columns:1fr 1fr}.nav-links{display:none}h1{font-size:44px}.section-head{display:block}.section-head h2{font-size:34px}.section-head p{margin-top:12px}.hero-card{transform:none;max-width:420px}.shot.wide{grid-column:auto}
     }
     @media (max-width:580px){.wrap{padding:0 16px}.stats,.steps,.process{grid-template-columns:1fr}.hero{padding-top:48px}h1{font-size:36px}.lead{font-size:17px}.section-head h2{font-size:30px}.footer-grid{display:block}.footer-grid .hero-actions{margin-top:18px}}
   </style>
@@ -90,7 +97,7 @@
     <nav class="nav-links">
       <a href="#vitabot">VitaBot</a>
       <a href="#evidence">Доказательства</a>
-      <a href="#hermes">HermesAI</a>
+      <a href="#hermes">Veluna AI</a>
       <a href="#lifegame">Life Game</a>
       <a class="btn" href="https://t.me/anastasia_germes">Telegram</a>
     </nav>
@@ -200,7 +207,7 @@
   <section id="hermes">
     <div class="wrap">
       <div class="section-head">
-        <h2>HermesAI / Veluna AI — AI-администраторы и AI-квалификаторы</h2>
+        <h2>Veluna AI — AI-администраторы и AI-квалификаторы</h2>
         <p>Опыт запуска AI-решений для бизнеса, CRM-процессов, воронок и команды.</p>
       </div>
       <div class="columns">
@@ -225,6 +232,19 @@
           </ul>
         </div>
       </div>
+      <article class="featured-case">
+        <div>
+          <div class="eyebrow">Продуктовый кейс</div>
+          <h3>Внедрение ИИ-администратора в салон красоты</h3>
+          <p>Исследование потерь в переписках, приоритизация гипотез, MVP и оценка результата</p>
+          <div class="case-metrics" role="group" aria-label="Ключевые показатели кейса">
+            <span>985 целевых обращений до внедрения</span>
+            <span>361 диалог в аудите процесса</span>
+            <span>+8,84 п. п. изменение прокси-конверсии в запись</span>
+          </div>
+        </div>
+        <a class="btn" href="cases/ai-admin/">Открыть кейс →</a>
+      </article>
     </div>
   </section>
 
