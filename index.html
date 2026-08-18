@@ -103,11 +103,21 @@
     .featured-case .case-metrics{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
     .featured-case .case-metrics span{padding:8px 11px;border:1px solid rgba(255,255,255,.2);border-radius:999px;font-size:13px;font-weight:700}
     .featured-case .btn{white-space:nowrap}
+    .jobflow-card{margin-top:26px;padding:34px;border:1px solid var(--line);border-radius:var(--radius);background:var(--paper);box-shadow:var(--shadow)}
+    .jobflow-card h3{font-size:32px;line-height:1.08;letter-spacing:-.045em;margin:0 0 12px;max-width:780px}
+    .jobflow-card>.lead-copy{max-width:880px;color:var(--muted);font-size:18px}
+    .jobflow-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;margin-top:24px}
+    .jobflow-panel{padding:22px;border:1px solid var(--line);border-radius:20px;background:#faf8f2}
+    .jobflow-panel h4{margin:0 0 10px;font-size:18px}
+    .jobflow-panel p{margin:0;color:var(--muted)}
+    .jobflow-panel ul{margin:0;padding:0;list-style:none;display:grid;gap:9px;color:var(--muted)}
+    .jobflow-panel li{position:relative;padding-left:22px}.jobflow-panel li:before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;border-radius:50%;background:var(--accent2)}
+    .jobflow-status{margin-top:18px;padding:14px 16px;border-left:4px solid var(--accent2);border-radius:0 14px 14px 0;background:var(--green)}
     .footer{padding:44px 0;background:#0f1c19;color:#f6f4ee}
     .footer-grid{display:flex;justify-content:space-between;gap:24px;align-items:center}
     .footer a{color:#d9f1ea;text-decoration:underline;text-underline-offset:4px}
     @media (max-width:920px){
-      .hero-grid,.case-intro,.columns,.evidence,.featured-case{grid-template-columns:1fr}.stats,.steps,.process{grid-template-columns:1fr 1fr}.nav-links{display:none}.mobile-nav{display:block}h1{font-size:44px}.section-head{display:block}.section-head h2{font-size:34px}.section-head p{margin-top:12px}.hero-card{transform:none;max-width:420px}.shot.wide{grid-column:auto}
+      .hero-grid,.case-intro,.columns,.evidence,.featured-case,.jobflow-grid{grid-template-columns:1fr}.stats,.steps,.process{grid-template-columns:1fr 1fr}.nav-links{display:none}.mobile-nav{display:block}h1{font-size:44px}.section-head{display:block}.section-head h2{font-size:34px}.section-head p{margin-top:12px}.hero-card{transform:none;max-width:420px}.shot.wide{grid-column:auto}
     }
     @media (max-width:580px){.wrap{padding:0 16px}.stats,.steps,.process{grid-template-columns:1fr}.hero{padding-top:48px}h1{font-size:36px}.lead{font-size:17px}.section-head h2{font-size:30px}.footer-grid{display:block}.footer-grid .hero-actions{margin-top:18px}}
   </style>
@@ -122,12 +132,14 @@
         <div class="dropdown">
           <a href="cases/ai-admin/"><strong>ИИ-администратор</strong><span>Аудит 361 диалога → гипотезы → MVP → результат</span></a>
           <a href="#vitabot"><strong>VitaBot</strong><span>Проектирование продукта от идеи до MVP</span></a>
+          <a href="cases/jobflow/"><strong>JobFlow</strong><span>JTBD → продуктовая модель → MVP → smoke test</span></a>
         </div>
       </details>
       <details class="nav-group">
         <summary>Продукты</summary>
         <div class="dropdown">
           <a href="#hermes"><strong>Veluna AI</strong><span>ИИ-администраторы для клиентских коммуникаций</span></a>
+          <a href="cases/jobflow/"><strong>JobFlow</strong><span>CRM и продуктовый подход к поиску работы</span></a>
           <a href="#lifegame"><strong>Life Game</strong><span>Pet-product для целей, задач и привычек</span></a>
         </div>
       </details>
@@ -139,9 +151,9 @@
       <summary aria-label="Открыть меню"><span class="menu-icon" aria-hidden="true"></span></summary>
       <nav class="mobile-panel" aria-label="Мобильная навигация">
         <div class="mobile-label">Кейсы</div>
-        <a href="cases/ai-admin/">ИИ-администратор</a><a href="#vitabot">VitaBot</a>
+        <a href="cases/ai-admin/">ИИ-администратор</a><a href="#vitabot">VitaBot</a><a href="cases/jobflow/">JobFlow</a>
         <div class="mobile-label">Продукты</div>
-        <a href="#hermes">Veluna AI</a><a href="#lifegame">Life Game</a>
+        <a href="#hermes">Veluna AI</a><a href="cases/jobflow/">JobFlow</a><a href="#lifegame">Life Game</a>
         <div class="mobile-label">Портфолио</div>
         <a href="#evidence">Результаты</a><a href="#top">Обо мне</a>
         <a class="mobile-contact" href="https://t.me/anastasia_germes">Связаться</a>
@@ -290,6 +302,40 @@
           </div>
         </div>
         <a class="btn" href="cases/ai-admin/">Открыть кейс →</a>
+      </article>
+    </div>
+  </section>
+
+
+  <section id="jobflow">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>JobFlow — система управляемого поиска работы</h2>
+        <p>0→1 продуктовый эксперимент: от личной проблемы и JTBD до работающего MVP и smoke test.</p>
+      </div>
+      <article class="jobflow-card">
+        <div class="eyebrow">MVP · Smoke test</div>
+        <h3>Как я превратила личный хаос в откликах, переписках и собеседованиях в работающий сервис</h3>
+        <p class="lead-copy">JobFlow помогает соискателю понять, что делать сегодня, не потерять тёплые контакты с работодателями и увидеть, на каком участке воронки возникает просадка — от отклика до оффера.</p>
+        <div class="jobflow-grid">
+          <div class="jobflow-panel">
+            <h4>В основе продукта</h4>
+            <ul>
+              <li>приоритет дня: текущие диалоги → новые отклики → улучшения;</li>
+              <li>CRM процессов с работодателями;</li>
+              <li>аналитика конверсий по ролям и резюме;</li>
+              <li>подготовка к интервью;</li>
+              <li>задачи, связанные с конкретной метрикой: приглашением или оффером.</li>
+            </ul>
+          </div>
+          <div class="jobflow-panel">
+            <h4>Моя роль</h4>
+            <p>Product discovery, JTBD, продуктовая архитектура, PRD и backlog, UX-логика, приоритизация, vibe coding, тестирование и запуск smoke test.</p>
+            <div class="tags"><span class="tag">Product Discovery</span><span class="tag">JTBD</span><span class="tag">0→1</span><span class="tag">MVP</span><span class="tag">Product Analytics</span><span class="tag">Vibe Coding</span><span class="tag">Smoke Test</span></div>
+          </div>
+        </div>
+        <div class="jobflow-status"><strong>Статус:</strong> работающий MVP, проверка внешнего спроса.</div>
+        <div class="hero-actions"><a class="btn primary" href="cases/jobflow/">Открыть продуктовый кейс</a><a class="btn" href="cases/jobflow/#video">Видеообзор · 3 минуты</a></div>
       </article>
     </div>
   </section>
