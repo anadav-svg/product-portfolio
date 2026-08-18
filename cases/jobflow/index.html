@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JobFlow — продуктовый кейс Анастасии Федоровой</title>
+  <meta name="description" content="От личной проблемы и JTBD — к продуктовой архитектуре, работающему MVP JobFlow и проверке спроса.">
+  <link rel="stylesheet" href="../../assets/case.css">
+  <style>
+    .case-meta{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:34px;max-width:980px}
+    .meta-item{padding:18px;border:1px solid var(--line);border-radius:20px;background:rgba(255,253,248,.82)}
+    .meta-item strong,.meta-item span{display:block}.meta-item strong{color:var(--accent);font-size:14px}.meta-item span{margin-top:5px;color:var(--muted);font-size:13px;line-height:1.4}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+    .badge-list{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0}
+    .badge{padding:7px 10px;border:1px solid #cfd9d5;border-radius:999px;background:#edf4f0;color:#25493f;font-size:13px;font-weight:700}
+    .video-shell{margin:24px 0;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#0f1c19;box-shadow:var(--shadow)}
+    .video-frame{position:relative;width:100%;aspect-ratio:16/9}.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    .video-caption{padding:14px 18px;background:var(--paper);color:var(--muted);font-size:14px}
+    .priority-flow{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:22px 0}
+    .priority-flow div{padding:16px;border:1px solid var(--line);border-radius:16px;background:var(--paper);font-weight:700}
+    .priority-flow span{display:block;margin-bottom:5px;color:var(--accent);font-size:13px}
+    @media(max-width:980px){.case-meta{grid-template-columns:1fr 1fr}}
+    @media(max-width:640px){.case-meta,.priority-flow{grid-template-columns:1fr}.hero-actions .btn{width:100%}}
+  </style>
+</head>
+<body>
+<header class="site-header"><div class="wrap nav">
+  <a class="brand" href="../../"><span class="brand-dot"></span><span>Анастасия Федорова</span></a>
+  <nav class="nav-links" aria-label="Основная навигация">
+    <details class="nav-group"><summary>Кейсы</summary><div class="dropdown"><a href="../ai-admin/"><strong>ИИ-администратор</strong><span>Аудит 361 диалога → гипотезы → MVP → результат</span></a><a href="../../#vitabot"><strong>VitaBot</strong><span>Проектирование продукта от идеи до MVP</span></a><a href="./"><strong>JobFlow</strong><span>JTBD → продуктовая модель → MVP → smoke test</span></a></div></details>
+    <details class="nav-group"><summary>Продукты</summary><div class="dropdown"><a href="../../#hermes"><strong>Veluna AI</strong><span>ИИ-администраторы для клиентских коммуникаций</span></a><a href="./"><strong>JobFlow</strong><span>CRM и продуктовый подход к поиску работы</span></a><a href="../../#lifegame"><strong>Life Game</strong><span>Pet-product для целей, задач и привычек</span></a></div></details>
+    <a class="nav-link" href="../../#evidence">Результаты</a><a class="nav-link" href="../../#top">Обо мне</a><a class="btn primary" href="https://t.me/anastasia_germes">Связаться</a>
+  </nav>
+  <details class="mobile-nav"><summary aria-label="Открыть меню"><span class="menu-icon" aria-hidden="true"></span></summary><nav class="mobile-panel" aria-label="Мобильная навигация"><div class="mobile-label">Кейсы</div><a href="../ai-admin/">ИИ-администратор</a><a href="../../#vitabot">VitaBot</a><a href="./">JobFlow</a><div class="mobile-label">Продукты</div><a href="../../#hermes">Veluna AI</a><a href="./">JobFlow</a><a href="../../#lifegame">Life Game</a><div class="mobile-label">Портфолио</div><a href="../../#evidence">Результаты</a><a href="../../#top">Обо мне</a><a class="mobile-contact" href="https://t.me/anastasia_germes">Связаться</a></nav></details>
+</div></header>
+<main>
+<section class="case-hero"><div class="wrap">
+  <a class="case-back" href="../../#jobflow">← Назад в портфолио</a>
+  <div class="eyebrow">0→1 продуктовый эксперимент</div>
+  <h1>JobFlow — как я превратила хаос поиска работы в управляемый продуктовый процесс</h1>
+  <p class="lead">От личной проблемы и JTBD — к продуктовой архитектуре, работающему MVP и проверке спроса.</p>
+  <div class="case-meta" role="group" aria-label="Параметры кейса">
+    <div class="meta-item"><strong>Формат</strong><span>0→1 продуктовый эксперимент</span></div>
+    <div class="meta-item"><strong>Аудитория</strong><span>Активные соискатели с несколькими процессами</span></div>
+    <div class="meta-item"><strong>Статус</strong><span>MVP / smoke test</span></div>
+    <div class="meta-item"><strong>Моя роль</strong><span>Product Manager / Product Builder</span></div>
+  </div>
+  <div class="badge-list" aria-label="Компетенции"><span class="badge">Product Discovery</span><span class="badge">JTBD</span><span class="badge">0→1</span><span class="badge">MVP</span><span class="badge">Product Analytics</span><span class="badge">Vibe Coding</span><span class="badge">Smoke Test</span></div>
+  <div class="hero-actions"><a class="btn primary" href="#video">Смотреть видеообзор · 3 минуты</a><a class="btn" href="https://t.me/anastasia_germes">Связаться со мной</a></div>
+</div></section>
+<div class="wrap case-layout">
+<nav class="toc" aria-label="Содержание кейса"><strong>Содержание</strong><ol>
+  <li><a href="#context">1. Контекст</a></li><li><a href="#problem">2. Наблюдение</a></li><li><a href="#jtbd">3. JTBD</a></li><li><a href="#hypothesis">4. Гипотеза</a></li><li><a href="#mvp">5. MVP</a></li><li><a href="#decisions">6. Решения</a></li><li><a href="#metrics">7. Метрики</a></li><li><a href="#validation">8. Спрос</a></li><li><a href="#role">9. Моя роль</a></li><li><a href="#next">10. Следующий шаг</a></li>
+</ol></nav>
+<article class="case-body">
+<section class="case-section" id="context">
+  <h2>1. Контекст</h2>
+  <p>Во время активного поиска работы я одновременно работала с несколькими ролями, резюме и вакансиями. Параллельно появлялись отклики, переписки с HR, тестовые задания, интервью и задачи по улучшению резюме.</p>
+  <p>В какой-то момент стало сложно понять, какое действие сейчас важнее:</p>
+  <ul><li>ответить компаниям, уже проявившим интерес;</li><li>сделать новые отклики;</li><li>подготовиться к интервью;</li><li>улучшить резюме;</li><li>пройти обучение.</li></ul>
+  <div class="callout"><p>Обычная таблица позволяла посчитать отклики, но не отвечала на главный вопрос: <strong>«Что мне нужно сделать сегодня, чтобы приблизиться к офферу?»</strong></p></div>
+</section>
+<section class="case-section" id="problem">
+  <h2>2. Наблюдение за проблемой</h2>
+  <p>Я заметила повторяющийся паттерн: улучшение резюме и обучение психологически проще, чем ответы работодателям и новые отклики. Поэтому время могло уходить на полезные, но не самые приоритетные действия.</p>
+  <h3>Основные проблемы</h3>
+  <ul><li>тёплые переписки теряются среди новых задач;</li><li>непонятно, по какой роли или версии резюме возникает просадка;</li><li>причины отказов не превращаются в гипотезы;</li><li>задачи по улучшению не связаны с измеримой конверсией;</li><li>нет единой истории взаимодействия с компанией.</li></ul>
+  <p>Собственный опыт стал источником продуктовой гипотезы, но не доказательством существования рынка.</p>
+</section>
+<section class="case-section" id="jtbd">
+  <h2>3. JTBD</h2>
+  <div class="callout"><p>Когда я одновременно веду несколько процессов с работодателями, я хочу понимать, кому нужно ответить сегодня, где находится каждая вакансия и какое действие сильнее всего приблизит меня к офферу, чтобы не терять тёплые возможности и не действовать хаотично.</p></div>
+</section>
+<section class="case-section" id="hypothesis">
+  <h2>4. Продуктовая гипотеза</h2>
+  <p>Если:</p>
+  <ul><li>сначала показывать текущие диалоги с работодателями;</li><li>затем план новых откликов;</li><li>после этого задачи по улучшению;</li><li>связать каждую задачу с конверсией в приглашение или оффер;</li><li>показывать воронку отдельно по ролям и резюме,</li></ul>
+  <p>то пользователь сможет лучше приоритизировать действия, находить просадки в воронке и системно проверять гипотезы.</p>
+  <div class="callout"><p><strong>Главное продуктовое решение</strong> — не создавать ещё один таск-трекер, а связать ежедневные действия с результатом поиска работы.</p></div>
+  <p>JobFlow — CRM для соискателей, которым не знаком продуктовый подход к поиску работы: система соединяет процессы с работодателями, замеры конверсий и приоритизацию гипотез по улучшению.</p>
+</section>
+<section class="case-section" id="mvp">
+  <h2>5. MVP</h2>
+  <h3>Сегодня</h3>
+  <p>Три последовательных блока:</p>
+  <div class="priority-flow"><div><span>01</span>Проработка текущих диалогов</div><div><span>02</span>Новые отклики</div><div><span>03</span>Задачи на улучшение конверсий</div></div>
+  <p>Для блоков и отдельных задач можно планировать время и запускать фокус-сессии.</p>
+  <h3>CRM</h3>
+  <p>Каждый отклик становится процессом, связанным с компанией, вакансией, ролью и конкретным резюме.</p>
+  <div class="flow"><div>Необработано</div><div>Отклик</div><div>Этап 1</div><div>Этап 2</div><div>Этап 3</div><div>Оффер</div><div>Закрыто</div></div>
+  <p>Сделку можно закрыть как принятую или как отказ — со стороны пользователя или работодателя — и сохранить причину.</p>
+  <h3>Роли и резюме</h3>
+  <p>У одной роли может быть несколько резюме. Это позволяет отдельно анализировать, какое позиционирование лучше приводит к приглашениям.</p>
+  <h3>Подготовка к интервью</h3>
+  <p>Для каждой роли создаётся базовый сценарий интервью: гипотезы, вопросы работодателю, кейсы, аргументы по рискам, рассказ о себе и закрытие встречи. Для конкретной вакансии сценарий можно скорректировать.</p>
+  <h3>Бэклог гипотез</h3>
+  <p>Задачи оцениваются по предполагаемому влиянию и времени выполнения. Каждая задача связана с одной из двух метрик:</p>
+  <ul><li>конверсия в приглашение;</li><li>конверсия в оффер.</li></ul>
+  <h3>Аналитика</h3>
+  <p>Система показывает конверсию по ролям и резюме:</p>
+  <div class="flow"><div>Отклики</div><div>Этап 1</div><div>Этап 2</div><div>Этап 3</div><div>Оффер</div></div>
+  <p>Также фиксируются отказы и их причины.</p>
+</section>
+<section class="case-section" id="decisions">
+  <h2>6. Продуктовые решения и компромиссы</h2>
+  <p>Первоначально я хотела учитывать только агрегированные количества откликов и этапов, чтобы не усложнять работу.</p>
+  <p>В процессе использования выяснилось, что без связи с компанией и вакансией невозможно понять:</p>
+  <ul><li>с кем нужно продолжить диалог;</li><li>где находится конкретный процесс;</li><li>после какого этапа произошёл отказ;</li><li>к какой роли и резюме относится результат.</li></ul>
+  <p>Поэтому модель продукта изменилась: отклик стал сделкой, связанной с компанией, вакансией, ролью и резюме.</p>
+  <p>Другой пример итерации — блок улучшений. Сначала я хотела блокировать переход к нему до выполнения остальных задач. Но подготовка к ближайшему интервью тоже может быть самым важным действием. Жёсткое ограничение убрала, а контроль сохранила через порядок блоков и учёт времени.</p>
+</section>
+<section class="case-section" id="metrics">
+  <h2>7. Метрики продукта</h2>
+  <p>Основные продуктовые показатели:</p>
+  <ul><li>конверсия из отклика в первый этап;</li><li>конверсия из этапов в оффер;</li><li>конверсия отдельно по каждой роли и резюме;</li><li>количество потерянных или просроченных взаимодействий;</li><li>выполнение дневного и недельного плана;</li><li>распределение времени между диалогами, откликами и улучшениями.</li></ul>
+  <p>Для анализа изменений резюме используется операционное правило: не делать выводы по нескольким откликам, а сначала собрать достаточный объём наблюдений.</p>
+</section>
+<section class="case-section" id="validation">
+  <h2>8. Проверка спроса</h2>
+  <p>После создания MVP я записала видеообзор и опубликовала его во ВКонтакте вместе с описанием проблемы.</p>
+  <p>Цель smoke test — проверить не интерес к идее вообще, а наличие людей, которые:</p>
+  <ul><li>активно ищут работу;</li><li>ведут несколько процессов одновременно;</li><li>испытывают сложности с контролем и приоритетами;</li><li>готовы попробовать систему или обсудить платный пилот.</li></ul>
+  <div class="callout"><p>До появления этих сигналов я не считаю рыночную гипотезу подтверждённой.</p></div>
+  <div class="video-shell" id="video">
+    <div class="video-frame"><iframe src="https://vkvideo.ru/video_ext.php?oid=-227724032&amp;id=456239039&amp;hash=89080ee55ee3c62f&amp;hd=3" title="Видеообзор JobFlow" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock" allowfullscreen loading="lazy"></iframe></div>
+    <div class="video-caption">Видеообзор работающего MVP JobFlow · 3 минуты</div>
+  </div>
+</section>
+<section class="case-section" id="role">
+  <h2>9. Что сделала лично</h2>
+  <ul><li>сформулировала проблему и JTBD;</li><li>спроектировала информационную архитектуру;</li><li>описала сущности, сценарии и связи между ними;</li><li>сформировала backlog и правила приоритизации;</li><li>собрала интерактивный MVP с помощью AI-assisted / vibe coding;</li><li>тестировала систему на собственных данных;</li><li>корректировала логику по результатам реального использования;</li><li>подготовила позиционирование, видео и smoke test.</li></ul>
+</section>
+<section class="case-section" id="next">
+  <h2>10. Статус и следующий шаг</h2>
+  <p>Сейчас собран работающий MVP и запущена проверка внешнего спроса.</p>
+  <p>Следующий шаг зависит от результатов smoke test:</p>
+  <ul><li>провести интервью с активными соискателями;</li><li>проверить повторяемость выявленной проблемы;</li><li>определить минимальный сценарий подключения;</li><li>протестировать готовность платить;</li><li>принять решение: развивать продукт, изменить сегмент или закрыть гипотезу.</li></ul>
+  <div class="callout"><p><strong>Цепочка продуктовой работы:</strong> наблюдение за поведением → формулировка проблемы → JTBD → продуктовая модель → MVP → итерации → smoke test.</p></div>
+  <div class="hero-actions"><a class="btn primary" href="#video">Смотреть видеообзор</a><a class="btn" href="https://t.me/anastasia_germes">Связаться со мной</a></div>
+</section>
+</article></div>
+</main>
+<footer class="footer"><div class="wrap footer-inner"><div><strong>Анастасия Федорова</strong><br>AI Product Manager / Product Builder</div><a href="../../#jobflow">Вернуться в портфолио</a></div></footer>
+</body>
+</html>
